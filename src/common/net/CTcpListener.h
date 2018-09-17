@@ -26,8 +26,8 @@ public:
 	virtual void onRecv();
 
 private:
-	CConnManager *m_connManager;
-	CTcpConnection m_tcpSock;
+	CConnManager*	m_connManager;
+	CTcpConnection 	m_tcpSock;
 
 	CTcpListener(const CTcpListener&);
 	CTcpListener& operator =(const CTcpListener&);

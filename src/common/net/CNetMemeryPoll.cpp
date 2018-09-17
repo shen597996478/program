@@ -55,7 +55,7 @@ int CNetMemeryPoll::createOrIncreaseMemeryPoll(int bufSize, int count)
 		m_freeBuf.addToEnd((Node*)new CNetBuf(bufSize, (void*)this));
 	}
 
-	return 0;
+	return Success;
 }
 
 }

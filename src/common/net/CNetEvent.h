@@ -1,6 +1,7 @@
 #ifndef __CNetEvent_H__
 #define __CNetEvent_H__
 
+#include "NetCommon.h"
 #include "CEpoll.h"
 #include "base/CThread.h"
 #include "base/CChain.h"
@@ -9,7 +10,6 @@
 
 namespace CNet {
 
-#define	MAX_EVENT	1024
 class CNetEvent : public CBase::CThread
 {
 
@@ -30,12 +30,12 @@ protected:
 	virtual void depatch(CBase::CChainList *connList) = 0;
 
 private:
-	CEpoll m_epoll;
-	struct epoll_event m_waitEvents[MAX_EVENT];
-	int m_timeout;
-	CBase::Node m_freeNode[MAX_EVENT];
-	bool m_isStop;
-	bool m_isExit;
+	CEpoll 				m_epoll;
+	struct epoll_event 	m_waitEvents[MAX_EVENT];
+	int 				m_timeout;
+	CBase::Node 		m_freeNode[MAX_EVENT];
+	bool 				m_isStop;
+	bool 				m_isExit;
 
 	CNetEvent(const CNetEvent &);
 	CNetEvent &operator=(const CNetEvent &);

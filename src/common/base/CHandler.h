@@ -30,9 +30,9 @@ private:
 	void onStop();
 
 private:
-	bool m_isStop;
-	bool m_isExit;
-	std::queue<CMessage *> m_MessageQueue;
+	bool 					m_isStop;
+	bool 					m_isExit;
+	std::queue<CMessage *> 	m_MessageQueue;
 
 	CHandler(const CHandler &);
 	CHandler &operator=(const CHandler &);

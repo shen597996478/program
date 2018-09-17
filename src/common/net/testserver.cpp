@@ -56,7 +56,7 @@ int main(int argc, char **args)
 		error = tcpCli.connect(error);
 		NET_LOGD("file:%s connect finish(%d)",__FILE__, error);
 		sleep(5);
-		int count = 228;
+		int count = 250;
 		while(count --) {
 			struct NetPkgHeader head;
 
@@ -70,7 +70,7 @@ int main(int argc, char **args)
 			::send(fd, "new data.", sizeof("new data."), 0);
 		}
 		NET_LOGD("file:%s send finish(%d)",__FILE__, error);
-		sleep(5);
+		//sleep(5);
 		::close(fd);
 		NET_LOGD("file:%s close finish",__FILE__);
 		sleep(3);

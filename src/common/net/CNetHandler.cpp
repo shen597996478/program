@@ -41,11 +41,17 @@ void CNetHandler::freeMessage(CMessage* msg)
 void CNetHandler::processMessage(CMessage *msg)
 {
 	__AUTO_NET_LOG__
+#if 0
+	// test
 	CNetPkgMsg* pkgMsg = (CNetPkgMsg*) msg;
 	// gettid();
 	int bodyLen = pkgMsg->getHead()->len;
 	NET_LOGD("===============bodyLen:%d================",bodyLen);
-	
+
+	char* data = new char[bodyLen];
+	int n = pkgMsg->readBodyData(data, bodyLen);
+	NET_LOGD("===============body:%s======readLen:%d==========", data, n);
+#endif
 }
 
 }

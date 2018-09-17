@@ -20,7 +20,7 @@ public:
 
 	
 private:
-	bool m_isListening;
+	bool 	m_isListening;
 
 	CTcpConnection(const CTcpConnection&);
 	CTcpConnection& operator =(const CTcpConnection&);

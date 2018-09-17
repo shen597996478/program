@@ -10,8 +10,6 @@
 
 namespace CNet {
 
-#define MAX_HANDLER_THREAD (10)
-
 class CConnManager : public CNetEvent
 {
 public:
@@ -30,9 +28,9 @@ protected:
 	virtual void depatch(CBase::CChainList *connList);
 
 private:
-	int m_lastThreadIndex;
-	CBase::CHandler* m_handlerThread[MAX_HANDLER_THREAD];
-	CNetMemeryPoll *memPoll;
+	int 				m_lastThreadIndex;
+	CBase::CHandler* 	m_handlerThread[MAX_HANDLER_THREAD];
+	CNetMemeryPoll*		memPoll;
 
 	CConnManager(const CConnManager &);
 	CConnManager &operator=(const CConnManager &);

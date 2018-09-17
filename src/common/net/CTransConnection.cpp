@@ -85,7 +85,7 @@ int CTransConnection::destory()
 int CTransConnection::setConnManager(CConnManager *connMgr)
 {
 	m_connManager = connMgr;
-	return 0;
+	return Success;
 }
 
 void CTransConnection::onRecv()
@@ -182,7 +182,7 @@ void CTransConnection::dealPkgHead()
 		m_curPkg->setConnection(this);
 	}
 
-	char buf[8];
+	char buf[20];
 	void* pbuf = buf;
 	getHead(pbuf, sizeof(struct NetPkgHeader));
 	//NET_LOGD("%s: m_curParseIndex:[%d], m_curParseBuf->m_curIndex:[%d].", __FILE__, m_curParseIndex, m_curParseBuf->m_curIndex);
@@ -243,7 +243,7 @@ int CTransConnection::getHead(void *head, int headLen)
 		getHead((uint8_t *)head + size, remain);
 	}
 
-	return 0;
+	return Success;
 }
 
 unsigned int CTransConnection::noParseBufSize()
@@ -299,13 +299,13 @@ int CTransConnection::moveIndex(CNetBuf* &buf, int &index, int dist)
 	}
 	if(dist == 0) {
 		// move success
-		return 0;
+		return Success;
 	} else {
 		// ERROR: recovery
 		buf = preBuf;
 		index = preIndex;
 		NET_LOGW("%s: remain buf less than distance that you want to move.", __FILE__);
-		return -1;
+		return OtherError;
 	}
 }
 

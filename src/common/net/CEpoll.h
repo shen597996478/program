@@ -20,7 +20,7 @@ public:
 	int removeListener(int fd);
 
 private:
-	int m_epollFd;
+	int 	m_epollFd;
 
 	CEpoll(const CEpoll &);
 	CEpoll &operator=(const CEpoll &);

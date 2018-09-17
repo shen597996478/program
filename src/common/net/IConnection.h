@@ -16,7 +16,8 @@ public:
 	virtual void onRecv() = 0;
 
 public:
-	CSocket* m_pSock;
+	CSocket* 	m_pSock;
+	
 	IConnection(const IConnection&);
 	IConnection& operator =(const IConnection&);
 };

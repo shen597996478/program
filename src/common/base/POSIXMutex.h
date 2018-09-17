@@ -19,6 +19,8 @@ public:
 	void trylock();
 	void unlock();
 	void destory();
+
+public:
 	pthread_mutex_t m_mutex;
 
 private:

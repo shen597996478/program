@@ -19,9 +19,9 @@ private:
 	int createOrIncreaseMemeryPoll(int bufSize, int count);
 
 private:
-	int m_bufSize;
-	int m_count;
-	CBase::CChainList m_freeBuf;
+	int 				m_bufSize;
+	int 				m_count;
+	CBase::CChainList 	m_freeBuf;
 
 	CNetMemeryPoll(const CNetMemeryPoll &);
 	CNetMemeryPoll &operator=(const CNetMemeryPoll &);

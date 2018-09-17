@@ -60,14 +60,14 @@ private:
 	int moveIndex(CNetBuf* &buf, int &index, int dist);
 
 private:
-	CNetBuf* m_recvBuf;
-	CNetBuf* m_curParseBuf;
-	int m_curParseIndex;
+	CNetBuf* 		m_recvBuf;
+	CNetBuf* 		m_curParseBuf;
+	int 			m_curParseIndex;
 
-	CNetPkgMsg* m_curPkg;
+	CNetPkgMsg* 	m_curPkg;
 
-	unsigned char m_logicStatic;
-	unsigned char m_connStatus;
+	unsigned char 	m_logicStatic;
+	unsigned char 	m_connStatus;
 
 	CConnManager *m_connManager;
 	CSocket m_sock;

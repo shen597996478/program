@@ -15,14 +15,14 @@ public:
 	int initialize();
 	void dump();
 public:
-	CNetBuf *m_prevBuf;
-	CNetBuf *m_nextBuf;
-	void* m_memeryPool;
+	CNetBuf*	m_prevBuf;
+	CNetBuf*	m_nextBuf;
+	void* 		m_memeryPool;
 	//void* data;
-	int m_size;
-	int m_used;
-	int m_curIndex;
-	bool m_needFree;
+	int 		m_size;
+	int 		m_used;
+	int 		m_curIndex;
+	bool 		m_needFree;
 
 	CNetBuf(const CNetBuf &);
 	CNetBuf &operator=(const CNetBuf &);

@@ -30,8 +30,6 @@ struct RBNode_t {
 
 class CRBtree
 {
-private:
-	struct RBNode_t *root;
 
 public:
 	CRBtree();
@@ -76,6 +74,9 @@ private:
 	void delete_case4(struct RBNode_t *node);
 	void delete_case5(struct RBNode_t *node);
 	void delete_case6(struct RBNode_t *node);
+
+private:
+	struct RBNode_t *root;
 
 	CRBtree(const CRBtree &);
 	CRBtree &operator=(const CRBtree &);

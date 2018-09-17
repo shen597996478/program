@@ -39,10 +39,11 @@ public:
 	struct NetPkgHeader* getHead();
 
 private:
-	IConnection* m_conn;
-	CNetBuf* m_bodyBuf;
-	int m_bodyReadIndex;
-	struct NetPkgHeader m_head;
+	int					m_remainLen;
+	IConnection*		m_conn;
+	CNetBuf*			m_bodyBuf;
+	int					m_bodyReadIndex;
+	struct NetPkgHeader	m_head;
 
 	CNetPkgMsg(const CNetPkgMsg &);
 	CNetPkgMsg &operator=(const CNetPkgMsg &);

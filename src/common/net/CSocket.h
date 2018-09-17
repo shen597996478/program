@@ -45,12 +45,12 @@ public:
 	unsigned short getPort() const;
 
 protected:
-	int m_fd;
-	// MAX 2^16 -1
-	unsigned short m_port;
-	strIP_t m_ip;
-	struct sockaddr_in m_addr;
-	unsigned int m_addrLen;
+	int 			m_fd;
+	// port MAX 2^16 -1
+	unsigned short	m_port;
+	strIP_t 		m_ip;
+	struct 			sockaddr_in m_addr;
+	unsigned int 	m_addrLen;
 
 private:
 	CSocket(const CSocket&);

@@ -32,21 +32,14 @@ public:
 protected:
 
 	CThread(const char * threadName = 0);
-
 	CThread(void * (*threadEntryPoint)(void *), void * threadParam = 0, const char * threadName = 0);
-
 	virtual ~CThread(void);
-
+	
 	virtual void onRun(void) = 0;
-
 	bool isActive(void);
-
 	void waitNotify(void);
-
 	void exitThread(void);
-
 	void cancelThread(void);
-
 	void joinThread(void);
 
 private:
@@ -54,8 +47,8 @@ private:
 	const char *		m_threadName;
 	POSIXThread *		m_posixThreadInstance;
 	POSIXThreadAttr *	m_posixThreadAttribute;
-	void * (*m_entryPoint)(void *);
-	void * m_entryParam;
+	void * 				(*m_entryPoint)(void *);
+	void * 				m_entryParam;
 	bool				m_isThreadStop;
 	POSIXCond *			m_wakeCondition;
 	bool				m_isPostNotify;

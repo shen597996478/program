@@ -34,7 +34,7 @@ int CNetBuf::initialize()
 	m_curIndex = 0;
 	m_needFree = false;
 
-	return 0;
+	return Success;
 }
 
 void CNetBuf::dump()

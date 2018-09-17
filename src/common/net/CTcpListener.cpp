@@ -35,25 +35,25 @@ void CTcpListener::initialize(CConnManager *conn, const char* ip, const int port
 int CTcpListener::setConnManager(CConnManager *conn)
 {
 	m_connManager = conn;
-	return 0;
+	return Success;
 }
 
 int CTcpListener::setConnInfo(const char* ip, const int port)
 {
 	m_tcpSock.initialize(ip, port);
-	return 0;
+	return Success;
 }
 
 int CTcpListener::create(int num)
 {
 	m_tcpSock.create(num);
-	return 0;
+	return Success;
 }
 
 int CTcpListener::destroy()
 {
 	m_tcpSock.destroy();
-	return 0;
+	return Success;
 }
 
 void CTcpListener::onRecv()

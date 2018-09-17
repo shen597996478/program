@@ -18,10 +18,7 @@ public:
 };
 
 class CChainList {
-public:
-	Node* head;
-private:
-	int len;
+
 public:
 	CChainList() { head = NULL; len = 0; };
 	~CChainList();
@@ -38,6 +35,11 @@ public:
 	int insertNode(int index, Node* node);
 	Node * Reverse();
 	//void dump();
+public:
+	Node* 	head;
+
+private:
+	int 	len;
 
 	CChainList(const CChainList &);
 	CChainList &operator=(const CChainList &);
