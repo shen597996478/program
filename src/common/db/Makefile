@@ -1,17 +1,20 @@
-INC_PATH := -I/usr/local/include \
-			-I./ \
-			-I/usr/include \
-			-I../../common
+INC_PATH := -I/usr/local/include 	\
+			-I./ 					\
+			-I/usr/include 			\
+			-I../../common			\
+			-I../../
 
 CFLAGS = -static $(INC_PATH) -Wall -std=c++0x
 CFLAGS += -g   #调试日志开关，编译运行版本的时候注释掉该选项
 CC=g++
 SRC=$(wildcard *.cpp)
 OBJ=$(addprefix ./, $(addsuffix .o, $(basename $(SRC))))
-LIBVAR= -ldl -lbase -lpthread 
-LIBPATH= 	-L/usr/lib/x86_64-linux-gnu/ \
-			-L../../../out/lib
-TARGET=testserver
+LIBVAR= -ldl -lbase -lhiredis
+LIBPATH= 	-L/usr/lib/x86_64-linux-gnu/ 	\
+			-L../../../out/lib 				\
+			-L../../src/extern/hiredis
+
+TARGET=testdb
 #TARGET_BIN=./libnet.a
 
 

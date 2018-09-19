@@ -1,5 +1,5 @@
-CFLAGS = -static -I/usr/local/include -I./ -I/usr/include -g -Wall -std=c++0x
-CFLAGS +=   #调试日志开关，编译运行版本的时候注释掉该选项
+CFLAGS = -static -I/usr/local/include -I./ -I/usr/include -Wall -std=c++0x
+CFLAGS += -g   #调试日志开关，编译运行版本的时候注释掉该选项
 CC=g++
 SRC=$(wildcard *.cpp)
 OBJ=$(addprefix ./, $(addsuffix .o, $(basename $(SRC))))
